@@ -1,10 +1,10 @@
 
 library(dplyr)
 
-# 2012
+
 colnames(bem.2012) <- c("data", "hora", "ano", "eleicao", 
-                     "uf", "sqcand", "cod_tipo", "des_tipo",
-                     "detalhe", "valor", "data_atualizacao", "hora_atualizacao")
+                        "uf", "sqcand", "cod_tipo", "des_tipo",
+                        "detalhe", "valor", "data_atualizacao", "hora_atualizacao")
 
 
 colnames(consulta.2012) <- c("data", "hora", "ano", "n_turno",
@@ -18,7 +18,6 @@ colnames(consulta.2012) <- c("data", "hora", "ano", "n_turno",
                              "cod_nacionalidade", "nacionalidade", "uf_nacimento", "cod_municipio_nasc", 
                              "nome_municipio_nasc", "despesa_max_camp", "cod_sit_tot_turno", "sit_tot_turno", "email")
 
-# 2014
 
 colnames(bem.2014) <- c("data", "hora", "ano", "eleicao", 
                         "uf", "sqcand", "cod_tipo", "des_tipo",
@@ -45,7 +44,6 @@ colnames(consulta.2014) <- c("data",
                              "despesa_max_camp", "cod_sit_tot_turno", 
                              "sit_tot_turno", "email")
 
-# 2016
 
 colnames(bem.2016) <- c("data", "hora", "ano", "eleicao", 
                         "uf", "sqcand", "cod_tipo", "des_tipo",
@@ -79,9 +77,9 @@ bem.2016.filtered <- bem.2016 %>%
   select(ano, uf, sqcand, cod_tipo, des_tipo, detalhe, valor,
          data_atualizacao, data)
 
-write.csv(bem.2012.filtered, file = "bem2012filtered.csv", row.names = FALSE)
-write.csv(bem.2014.filtered, file = "bem2014filtered.csv", row.names = FALSE)
-write.csv(bem.2016.filtered, file = "bem2016filtered.csv", row.names = FALSE)
+write.csv(bem.2012.filtered, file = "datahack/bem2012filtered.csv", row.names = FALSE)
+write.csv(bem.2014.filtered, file = "datahack/bem2014filtered.csv", row.names = FALSE)
+write.csv(bem.2016.filtered, file = "datahack/bem2016filtered.csv", row.names = FALSE)
 
 
 ### --- CONSULTAS
@@ -103,10 +101,26 @@ consulta.2016.filtered <- consulta.2016 %>%
          nascimento, desc_ocu, despesa_max_camp, email)
 
 
-write.csv(consulta.2012.filtered, file = "consulta2012filtered.csv", row.names = FALSE)
-write.csv(consulta.2014.filtered, file = "consulta2014filtered.csv", row.names = FALSE)
-write.csv(consulta.2016.filtered, file = "consulta2016filtered.csv", row.names = FALSE)
+write.csv(consulta.2012.filtered, file = "datahack/consulta2012filtered.csv", row.names = FALSE)
+write.csv(consulta.2014.filtered, file = "datahack/consulta2014filtered.csv", row.names = FALSE)
+write.csv(consulta.2016.filtered, file = "datahack/consulta2016filtered.csv", row.names = FALSE)
 
+
+
+### --- BINDING DATA
+
+bens <- rbind(bem.2012.filtered, bem.2014.filtered, bem.2016.filtered)
+consultas <- rbind(consulta.2012.filtered, consulta.2014.filtered, consulta.2016.filtered)
+
+
+bens$sqcand <-as.factor(bens$sqcand)
+
+consultas$sqcand <-as.factor(consultas$sqcand)
+consultas$cpf_cand <-as.factor(consultas$cpf_cand)
+
+
+write.csv(bens, file = "../datahack/bens.csv", row.names = FALSE)
+write.csv(consultas, file = "../datahack/consultas.csv", row.names = FALSE)
 
 
 
