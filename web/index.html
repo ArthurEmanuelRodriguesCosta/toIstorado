@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html ng-app='app' lang='en'>
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,301 +35,23 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+  <script src='/libs/angular/angular.min.js'></script>
+  <script src='/libs/angular/angular.router.js'></script>
+
+  <link href="/libs/charts/nv.d3.min.css" rel="stylesheet" type="text/css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.2/d3.min.js" charset="utf-8"></script>
+  <script src="/libs/charts/nv.d3.min.js"></script>
+
+  <script src='/app/app.js'></script>
+ 
+  <script src='/app/views/home/controller.js'></script>
+  <script src='/app/views/detalhes/controller.js'></script>
+  <script src='/app/directives/multibar/controller.js'></script>
+
 </head>
 
-<body id="page-top">
-
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-                </button>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-left">
-                    <li>
-                        <a class="page-scroll" href="#page-top">Home</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#features">API</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Sobre</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#">Bonde da Ostenta</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
-
-    <header>
-        <div class="container">
-            
-            
-            <div class="row">
-                <div class="col-sm-7">
-                    <div class="header-content">
-                        <div class="header-content-inner">
-                            logo aqui e pa
-                            <br/><br/><br/>
-                            <h2>Busque pelo candidato:</h2>
-                            <br/>Dropdown sensual aqui
-                            <!--<a href="#download" class="btn btn-outline btn-xl page-scroll">Start Now for Free!</a>-->
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-sm-5">
-                    
-                    <div class="top-estourados">
-                        <h2>Top E$tourados</h2>
-                        
-                        <div class="media">
-                          <div class="media-left">
-                              <a href="#">
-                            <img src="img/romero.jpg" class="img-circle" alt="Romero" width="70" height="70">
-                              </a>
-                          </div>
-                          <div class="media-body">
-                            <h4 class="media-heading "><b>Romero Rodrigues</b></h4>
-                            R$ 9 milhões de golpinhos
-                            <br/>Olar
-                          </div>
-                        </div>
-                        <div class="media marginha">
-                          <div class="media-left">
-                              <a href="#">
-                            <img src="img/romero.jpg" class="img-circle" alt="Romero" width="70" height="70">
-                              </a>
-                          </div>
-                          <div class="media-body">
-                            <h4 class="media-heading "><b>Romero Rodrigues</b></h4>
-                            R$ 9 milhões 
-                            <br/>PT - PB 
-                          </div>
-                        </div>
-                        <div class="media marginha">
-                          <div class="media-left">
-                              <a href="#">
-                            <img src="img/romero.jpg" class="img-circle" alt="Romero" width="70" height="70">
-                              </a>
-                          </div>
-                          <div class="media-body">
-                            <h4 class="media-heading "><b>Romero Rodrigues</b></h4>
-                            R$ 9 milhões de golpinhos
-                            <br/>Olar
-                          </div>
-                        </div>
-                        <div class="media marginha">
-                          <div class="media-left">
-                              <a href="#">
-                            <img src="img/romero.jpg" class="img-circle" alt="Romero" width="70" height="70">
-                              </a>
-                          </div>
-                          <div class="media-body">
-                            <h4 class="media-heading "><b>Romero Rodrigues</b></h4>
-                            R$ 9 milhões de golpinhos
-                            <br/>Olar
-                          </div>
-                        </div>
-                        <div class="media marginha">
-                          <div class="media-left">
-                              <a href="#">
-                            <img src="img/romero.jpg" class="img-circle" alt="Romero" width="70" height="70">
-                              </a>
-                          </div>
-                          <div class="media-body">
-                            <h4 class="media-heading "><b>Romero Rodrigues</b></h4>
-                            R$ 9 milhões de golpinhos
-                            <br/>Olar
-                          </div>
-                        </div>
-                        
-                    </div>
-                    
-                    
-
-                    <!--
-                    <div class="device-container">
-                        <div class="device-mockup iphone6_plus portrait white">
-                            <div class="device">
-                                <div class="screen">
-                                    
-                                    <img src="img/demo-screen-1.jpg" class="img-responsive" alt="">
-                                </div>
-                                <div class="button">
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    -->
-    
-                </div>
-                
-                
-            </div>
-        </div>
-    </header>
-
-    
-    <!-- a partir daqui é o corpo das paginas -->
-    
-    <!--
-    <section id="download" class="download bg-primary text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <h2 class="section-heading">Discover what all the buzz is about!</h2>
-                    <p>Our app is available on any mobile device! Download now to get started!</p>
-                    <div class="badges">
-                        <a class="badge-link" href="#"><img src="img/google-play-badge.svg" alt=""></a>
-                        <a class="badge-link" href="#"><img src="img/app-store-badge.svg" alt=""></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    -->
-    
-    <section id="features" class="features">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="section-heading">
-                        <h3>API</h3>
-                        <p class="text-muted">:)</p>
-                        <hr>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="device-container">
-                        <div class="device-mockup iphone6_plus portrait white">
-                            <div class="device">
-                                <div class="screen">
-                                    
-                                    <img src="img/demo-screen-1.jpg" class="img-responsive" alt=""> </div>
-                                <div class="button">
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-8">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="feature-item">
-                                    <i class="icon-screen-smartphone text-primary"></i>
-                                    <h3>Device Mockups</h3>
-                                    <p class="text-muted">Ready to use HTML/CSS device mockups, no Photoshop required!</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="feature-item">
-                                    <i class="icon-camera text-primary"></i>
-                                    <h3>Flexible Use</h3>
-                                    <p class="text-muted">Put an image, video, animation, or anything else in the screen!</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="feature-item">
-                                    <i class="icon-present text-primary"></i>
-                                    <h3>Free to Use</h3>
-                                    <p class="text-muted">As always, this theme is free to download and use for any purpose!</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="feature-item">
-                                    <i class="icon-lock-open text-primary"></i>
-                                    <h3>Open Source</h3>
-                                    <p class="text-muted">Since this theme is MIT licensed, you can use it commercially!</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </section>
-
-    <!--
-    <section class="cta">
-        <div class="cta-content">
-            <div class="container">
-                <h2>Stop waiting.<br>Start building.</h2>
-                <a href="#contact" class="btn btn-outline btn-xl page-scroll">Let's Get Started!</a>
-            </div>
-        </div>
-        <div class="overlay"></div>
-    </section>
-    -->
-
-    <section id="contact" class="contact bg-primary">
-        <div class="container">
-            <h3>Os dados <i class="fa fa-heart"></i></h3>
-            <h4>Os dados utilizados na construção desse site são provenientes principalmente do site <br/>
-                Repositório de Dados Eleitorais, mantido pelo Tribunal Superior Eleitoral.<br/>
-                Os dados envolvem bens patrimoniais dos candidatos nos anos de 2012, 2014 e 2016.
-                </h4>
-            
-            <hr>
-            <h3>Sobre o projeto</h3>
-            <h4>O <b>Tô Estourado</b> quer, através de uma temática lúdica, despertar no cidadão o sentimento<br/>
-                de vigilância para com o bem público, no sentido de facilitar a identificação de possíveis<br/>
-                irregularidades - neste caso, o enriquecimento ilícito dos candidatos.
-                
-                <br/><br/>
-                Este projeto surgiu no II Hackfest contra a corrupção promovido pelo Ministério <br/>
-            Público do estado da Paraíba e Laboratório Analytics. <br/>
-            
-                <br/>
-                Os créditos deste projeto são de Arthur Costa, Glauco PorDeus, Marianne Linhares, <br/>
-                Talita Lôbo e Victor Almeida. <br/>
-                Contribuições e sugestões são muito bem-vindas e podem ser feitas a partir do GitHub <br/>
-                do projeto, onde também estão disponíveis o código e dados utilizados. <br/>
-            </h4>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>Desenvolvido no II Hackfest Contra a Corrupção - 2016 </p>
-            <ul class="list-inline">
-                <li>
-                    <a href="https://github.com/ArthurEmanuelRodriguesCosta/toIstorado/">GitHub</a>
-                </li>
-                <li>
-                    <a href="#">FAQ</a>
-                </li>
-            </ul>
-        </div>
-    </footer>
-
-    <!-- jQuery -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-
-    <!-- Theme JavaScript -->
-    <script src="js/new-age.min.js"></script>
-
+<body id='page-top'>
+	<ui-view></ui-view>
 </body>
 
 </html>
