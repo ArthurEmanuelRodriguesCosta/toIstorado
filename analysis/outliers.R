@@ -52,6 +52,6 @@ for (i in seq(1, nrow(consultas), by=1)) {
   consultas$valor_bens[i] <- soma_valores[soma_valores$v == consultas$ano_sqcand[i], ]$x[1]
 }
 
-ggplot(data=test, aes(x=as.factor(nodes), y=time, colour=as.factor(reduces))) +
-  geom_boxplot() +
-  facet_wrap(~name) 
+#ggplot(data=test, aes(x=as.factor(nodes), y=time, colour=as.factor(reduces))) +
+#  geom_boxplot() +
+#  facet_wrap(~name) 
