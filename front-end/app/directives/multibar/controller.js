@@ -10,7 +10,7 @@
 			
 				var data = [{
 							"key": "Valor dos Bens (R$)",
-							"color": "#d67777",
+							"color": "#d67222",
 							"values": [
 							  { 
 								"label" : "Group A" ,
@@ -44,7 +44,7 @@
 				chart.yAxis.tickFormat(d3.format(',.2f'));
 				
 
-				d3.select('div svg')
+				d3.select('#div1 svg')
 				.datum(data)
 				.call(chart);
 
@@ -52,6 +52,42 @@
 
 				return chart;
 		  });
+
+			var chart2 = nv.models.multiBarChart().showControls(false);
+			var data2 = [
+			  {
+				key: "S1",
+				color: "#51A351",
+				values:
+				[      
+				  { x : "A", y : 40 },
+				  { x : "B", y : 30 },
+				  { x : 5,   y : 20 }  
+				]
+			  },
+			  {
+				key: "S2",
+				color: "#BD362F",
+				values:
+				[      
+				  { x : "A", y : 60 },
+				  { x : "B", y : 50 },
+				  { x : 5,   y : 70 } 
+				]
+			  },
+			 {
+				key: "S2",
+				color: "#DAAA99",
+				values:
+				[      
+				  { x : "A", y : 60 },
+				  { x : "B", y : 50 },
+				  { x : 5,   y : 70 } 
+				]
+			  }
+			];
+
+			d3.select('#div2 svg').datum(data2).transition().duration(500).call(chart2);
         }
     }
 });
