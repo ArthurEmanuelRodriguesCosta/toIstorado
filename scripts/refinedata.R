@@ -159,10 +159,30 @@ write.csv(bens, file = "../datahack/bens.csv", row.names = FALSE)
 write.csv(consultas, file = "../datahack/consultas.csv", row.names = FALSE)
 
 
+library(dplyr)
+
+merges <- merge(bens, consultas, by = c("ano", "sqcand"))
 
 
+olar <- paula %>%
+  group_by(ano) %>%
+  summarise(total = sum(valor))
 
 
+candidatos <- merges %>%
+  group_by(cpf_cand) %>%
+  summarise(total = sum(valor))
 
+
+aguinaldo <- subset(merges, merges$cpf_cand == "51921146400")
+
+
+aguinaldoresumo <- aguinaldo %>%
+  group_by(ano) %>%
+  summarise(total = sum(valor))
+
+
+ggplot(paula, aes(x = indTipoDocumento, y = ..count..)) + 
+  geom_bar(aes(fill=..count..)) + ggtitle("Quant. Tipos Documento") + ylab("Quantidade") + xlab("Tipo Documento")
 
 
